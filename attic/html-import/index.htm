@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="import" id="nav-import" href="./nav.htm">
+        <link rel="import" id="body-import" href="./content.htm">
+    </head>
+    <body>
+        <div id="nav-target"></div>
+        <div id="body-target"></div>
+        <script type="text/javascript">
+            const nav = document.getElementById('nav-import');
+            const body = document.getElementById('body-import');
+
+            const navTarget = document.getElementById('nav-target');
+            const bodyTarget = document.getElementById('body-target');
+
+            const navTemplate = nav.import.querySelector('template');
+            const bodyTemplate = body.import.querySelector('template');
+
+            navTarget.appendChild(document.importNode(navTemplate.content, true));
+            bodyTarget.appendChild(document.importNode(bodyTemplate.content, true));
+        </script>
+    </body>
+</html>
